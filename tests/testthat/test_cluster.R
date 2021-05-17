@@ -19,7 +19,7 @@ testBiocParallel <- function(){
 
 if(doTest){
     provider <- ECSFargateProvider::ECSFargateProvider()
-    provider$clusterName = "foreachRedisContainerUnitTest"
+    provider$clusterName = "doRedisContainerUnitTest"
 
     ## r-base doRedis backend
     container <- RedisWorkerContainer(image = "r-base", backend = "doRedis")

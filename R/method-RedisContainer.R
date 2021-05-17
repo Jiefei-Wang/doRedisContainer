@@ -17,12 +17,12 @@ doRedisContainer <- function(image = "",
 #'
 #' Get the Bioconductor Redis server container.
 #'
-#' @inheritParams RedisContainerProvider::RedisServerContainer
+#' @inheritParams RedisBaseContainer::RedisServerContainer
 #' @examples RedisServerContainer()
-#' @return a `foreachRedisContainer` object
+#' @return a `RedisContainer` object
 #' @export
 doRedisServerContainer <- function(environment = list(), tag = "latest"){
-  RedisContainerProvider::RedisServerContainer(environment = environment, tag = tag)
+  RedisBaseContainer::RedisServerContainer(environment = environment, tag = tag)
 }
 
 #' Get the doRedis worker container
@@ -40,7 +40,7 @@ doRedisServerContainer <- function(environment = list(), tag = "latest"){
 #'
 #' @examples
 #' doRedisWorkerContainer(image = "r-base")
-#' @return a `foreachRedisContainer` object
+#' @return a `doRedisContainer` object
 #' @export
 doRedisWorkerContainer <- function(
   image = c("r-base", "bioconductor"),

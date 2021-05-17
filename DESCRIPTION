@@ -1,4 +1,4 @@
-Package: foreachRedisContainer
+Package: doRedisContainer
 Title: The foreach doRedis container provider
 Version: 0.99.0
 Authors@R: 
@@ -18,7 +18,7 @@ Imports:
   doRedis,
   methods,
   utils,
-  RedisContainerProvider
+  RedisBaseContainer
 Suggests: 
     knitr,
     rmarkdown,

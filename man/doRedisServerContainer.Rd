@@ -12,7 +12,7 @@ doRedisServerContainer(environment = list(), tag = "latest")
 \item{tag}{Character, the image tag}
 }
 \value{
-a \code{foreachRedisContainer} object
+a \code{RedisContainer} object
 }
 \description{
 Get the Bioconductor Redis server container.

@@ -1,5 +1,5 @@
 #' @importFrom doRedis registerDoRedis
-#' @import RedisContainerProvider
+#' @import RedisBaseContainer
 #' @import DockerParallel
 #' @import methods
 #' @import utils

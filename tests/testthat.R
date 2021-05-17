@@ -1,4 +1,4 @@
 library(testthat)
-library(foreachRedisContainer)
+library(doRedisContainer)
 
-test_check("foreachRedisContainer")
+test_check("doRedisContainer")

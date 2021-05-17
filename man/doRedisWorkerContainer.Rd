@@ -29,7 +29,7 @@ by \verb{apt-get install} before running the R worker}
 \item{tag}{Character, the image tag}
 }
 \value{
-a \code{foreachRedisContainer} object
+a \code{doRedisContainer} object
 }
 \description{
 Get the doRedis worker container.
