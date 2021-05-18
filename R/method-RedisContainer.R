@@ -52,7 +52,7 @@ doRedisWorkerContainer <- function(
   image <- match.arg(image)
 
   name <- "redisRWorkerContainer"
-  image <- paste0("dockerparallel/", image, "-worker:",tag)
+  image <- paste0("docker.io/dockerparallel/", image, "-worker:",tag)
   doRedisContainer(image = image, name=name, RPackages=RPackages, sysPackages=sysPackages,
                    environment=environment,
                    maxWorkerNum=maxWorkerNum)
