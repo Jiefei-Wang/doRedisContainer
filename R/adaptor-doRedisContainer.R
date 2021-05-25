@@ -40,11 +40,22 @@ setMethod("registerParallelBackend", "doRedisContainer",
                   stop("Fail to find the server Ip")
               }
               stopifnot(!is.null(serverPort))
-
-              doRedis::registerDoRedis(queue=queue,
-                                       host = serverClientIP,
-                                       password = password,
-                                       port = serverPort, ...)
+              retryNumber <- 10L
+              for(i in seq_len(retryNumber)){
+                  status <- tryCatch({
+                      doRedis::registerDoRedis(queue=queue,
+                                               host = serverClientIP,
+                                               password = password,
+                                               port = serverPort, ...)
+                      TRUE
+                  },
+                  error = function(e) e)
+                  if(identical(status, TRUE)){
+                      break
+                  }else{
+                      Sys.sleep(1)
+                  }
+              }
               invisible(NULL)
           })
 
