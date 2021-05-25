@@ -1,8 +1,9 @@
 doRedisContainer <- function(image = "",
-                             name = NULL,  environment = list(),
+                             name = character(),
+                             environment = list(),
                              maxWorkerNum = 4L,
-                             RPackages = NULL,
-                             sysPackages = NULL){
+                             RPackages = character(),
+                             sysPackages = character()){
   .doRedisContainer$new(
     name=name, image = image,
     environment = environment,
@@ -44,8 +45,8 @@ doRedisServerContainer <- function(environment = list(), tag = "latest"){
 #' @export
 doRedisWorkerContainer <- function(
   image = c("r-base", "bioconductor"),
-  RPackages = NULL,
-  sysPackages = NULL,
+  RPackages = character(),
+  sysPackages = character(),
   environment = list(),
   maxWorkerNum = 4L,
   tag = "latest"){

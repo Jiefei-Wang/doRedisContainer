@@ -6,8 +6,8 @@
 \usage{
 doRedisWorkerContainer(
   image = c("r-base", "bioconductor"),
-  RPackages = NULL,
-  sysPackages = NULL,
+  RPackages = character(),
+  sysPackages = character(),
   environment = list(),
   maxWorkerNum = 4L,
   tag = "latest"
