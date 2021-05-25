@@ -49,3 +49,17 @@ setMethod("registerParallelBackend", "doRedisContainer",
           })
 
 
+
+#' Deregister the foreach doRedis backend
+#'
+#' Deregister the foreach doRedis backend. This will register the sequential backend.
+#'
+#' @inheritParams DockerParallel::deregisterParallelBackend
+#' @param ... Not used
+#' @return No return value
+#' @export
+setMethod("deregisterParallelBackend", "doRedisContainer",
+          function(container, cluster, verbose = FALSE, ...){
+              foreach::registerDoSEQ()
+              invisible(NULL)
+          })
